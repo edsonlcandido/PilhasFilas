@@ -66,6 +66,19 @@ namespace PilhasFilas
             }
         }
 
+        public int peek()
+        {
+            if (!estaVazia())
+            {
+                return _dezenas[_topo];
+            }
+            else
+            {
+                throw new Exception("Pilha está vazia");
+            }
+            
+        }
+
         public string[] data
         {
             get
