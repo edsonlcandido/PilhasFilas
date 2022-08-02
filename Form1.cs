@@ -10,10 +10,11 @@ using System.Windows.Forms;
 
 namespace PilhasFilas
 {
-    public partial class Form1 : Form
+    public partial class FormPilhasFilas : Form
     {
         PilhaEstatica pilhaEstatica;
-        public Form1()
+        PilhaDinamica pilhaDinamica;
+        public FormPilhasFilas()
         {
             InitializeComponent();
         }
@@ -21,7 +22,7 @@ namespace PilhasFilas
         private void Form1_Load(object sender, EventArgs e)
         {
             pilhaEstatica = new PilhaEstatica();
-
+            pilhaDinamica = new PilhaDinamica();
         }
 
         private void buttonPushPilhaEstatica_Click(object sender, EventArgs e)
@@ -34,7 +35,6 @@ namespace PilhasFilas
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
             
@@ -42,12 +42,12 @@ namespace PilhasFilas
 
         private void preencheTextBoxDataPilhaDinamica(string[] data)
         {
-            textBoxDataPilhaDinamica.ResetText();
+            textBoxDataPilhaEstatica.ResetText();
             for (int i = (data.Length - 1); i > -1; i--)
             {
                 if (data[i] != "0")
                 {
-                    textBoxDataPilhaDinamica.AppendText(data[i] + Environment.NewLine);
+                    textBoxDataPilhaEstatica.AppendText(data[i] + Environment.NewLine);
                 }
             }
         }
