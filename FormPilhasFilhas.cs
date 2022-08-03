@@ -14,6 +14,7 @@ namespace PilhasFilas
     {
         PilhaEstatica pilhaEstatica;
         PilhaDinamica pilhaDinamica;
+        FilaEstatica filaEstatica;
         public FormPilhasFilas()
         {
             InitializeComponent();
@@ -23,6 +24,7 @@ namespace PilhasFilas
         {
             pilhaEstatica = new PilhaEstatica();
             pilhaDinamica = new PilhaDinamica();
+            filaEstatica = new FilaEstatica();
         }
 
         private void buttonPushPilhaEstatica_Click(object sender, EventArgs e)
@@ -78,6 +80,18 @@ namespace PilhasFilas
             }
         }
 
+        private void preencheTextBoxDataFilaEstatica(string[] data)
+        {
+            textBoxDataFilaEstatica.ResetText();
+            for (int i = 0; i < data.Length; i++)
+            {
+                if (data[i] != "0")
+                {
+                textBoxDataFilaEstatica.AppendText(data[i] + Environment.NewLine);
+                }
+            }
+        }
+
         private void buttonPopPilhaEstatica_Click(object sender, EventArgs e)
         {
             try
@@ -106,6 +120,34 @@ namespace PilhasFilas
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void buttonEnqueueFilaEstatica_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                filaEstatica.enQueue(Convert.ToInt32(textBoxFilaEstatica.Text));
+                preencheTextBoxDataFilaEstatica(filaEstatica.data);
+                textBoxFilaEstatica.ResetText();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonDequeueFilaEstatica_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                filaEstatica.deQueue();
+                preencheTextBoxDataFilaEstatica(filaEstatica.data);
+                textBoxFilaEstatica.ResetText();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
