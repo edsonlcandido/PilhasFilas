@@ -30,7 +30,7 @@ namespace PilhasFilas
             try
             {
                 pilhaEstatica.push(Convert.ToInt32(textBoxInputPilhaEstatica.Text));
-                preencheTextBoxDataPilhaDinamica(pilhaEstatica.data);
+                preencheTextBoxDataPilhaEstatica(pilhaEstatica.data);
                 textBoxInputPilhaEstatica.ResetText();
             }
             catch (Exception ex)
@@ -39,8 +39,22 @@ namespace PilhasFilas
             }
             
         }
+        private void buttonPushPilhaDinamica_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                pilhaDinamica.push(Convert.ToInt32(textBoxPilhaDinamica.Text));
+                preencheTextBoxDataPilhaDinamica(pilhaDinamica.data);
+                textBoxPilhaDinamica.ResetText();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
-        private void preencheTextBoxDataPilhaDinamica(string[] data)
+        }
+
+        private void preencheTextBoxDataPilhaEstatica(string[] data)
         {
             textBoxDataPilhaEstatica.ResetText();
             for (int i = (data.Length - 1); i > -1; i--)
@@ -52,12 +66,24 @@ namespace PilhasFilas
             }
         }
 
+        private void preencheTextBoxDataPilhaDinamica(string[] data)
+        {
+            textBoxDataPilhaDinamica.ResetText();
+            for (int i = 0; i < data.Length; i++)
+            {
+                //if (data[i] != "0")
+                //{
+                    textBoxDataPilhaDinamica.AppendText(data[i] + Environment.NewLine);
+                //}
+            }
+        }
+
         private void buttonPopPilhaEstatica_Click(object sender, EventArgs e)
         {
             try
             {
                 pilhaEstatica.pop();
-                preencheTextBoxDataPilhaDinamica(pilhaEstatica.data);
+                preencheTextBoxDataPilhaEstatica(pilhaDinamica.data);
                 textBoxInputPilhaEstatica.ResetText();
             }
             catch (Exception ex)
@@ -65,6 +91,21 @@ namespace PilhasFilas
                 MessageBox.Show(ex.Message);
             }
             
+        }
+
+        private void buttonPopPilhaDinamica_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                pilhaDinamica.pop();
+                preencheTextBoxDataPilhaDinamica(pilhaDinamica.data);
+                textBoxPilhaDinamica.ResetText();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

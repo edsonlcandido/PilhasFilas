@@ -46,5 +46,54 @@ namespace PilhasFilas
             }
             this._contador++;
         }
+
+        public int peek()
+        {
+            if(estaVazia())
+            {
+                throw new Exception("Pilha está vazia");
+            }
+            return this._top.dezena;
+        }
+
+        public void pop()
+        {
+            if (estaVazia())
+            {
+                throw new Exception("Pilha está vazia");
+            }
+
+            this._top = this._top.proximo;
+            this._contador--;
+
+        }
+
+        public bool estaVazia()
+        {
+            return this._contador == 0;
+        }
+
+        public string[] data 
+        { 
+            get
+            {
+                string[] _data = new string[this._contador];
+                NO noAtual = this._top;
+                for (int i = 0; i < this._contador; i++)
+                {
+                    if (i == 0)
+                    {
+                        _data[i] = noAtual.dezena.ToString() + " <- topo";
+                        noAtual = noAtual.proximo;
+                    }
+                    else
+                    {
+                        _data[i] = noAtual.dezena.ToString();
+                        noAtual = noAtual.proximo;
+                    }
+                }
+                return _data;
+            } 
+        }
     }
 }

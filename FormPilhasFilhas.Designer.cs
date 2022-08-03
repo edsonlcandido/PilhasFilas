@@ -128,6 +128,7 @@
             this.buttonPushPilhaDinamica.TabIndex = 2;
             this.buttonPushPilhaDinamica.Text = "Adiciona";
             this.buttonPushPilhaDinamica.UseVisualStyleBackColor = true;
+            this.buttonPushPilhaDinamica.Click += new System.EventHandler(this.buttonPushPilhaDinamica_Click);
             // 
             // buttonPopPilhaDinamica
             // 
@@ -137,6 +138,7 @@
             this.buttonPopPilhaDinamica.TabIndex = 3;
             this.buttonPopPilhaDinamica.Text = "Remove";
             this.buttonPopPilhaDinamica.UseVisualStyleBackColor = true;
+            this.buttonPopPilhaDinamica.Click += new System.EventHandler(this.buttonPopPilhaDinamica_Click);
             // 
             // FormPilhasFilas
             // 
