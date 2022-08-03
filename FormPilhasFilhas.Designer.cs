@@ -38,8 +38,14 @@
             this.textBoxDataPilhaDinamica = new System.Windows.Forms.TextBox();
             this.buttonPushPilhaDinamica = new System.Windows.Forms.Button();
             this.buttonPopPilhaDinamica = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBoxFilaDinamica = new System.Windows.Forms.TextBox();
+            this.textBoxDataFilaDinamica = new System.Windows.Forms.TextBox();
+            this.buttonEnqueueFilaDinamica = new System.Windows.Forms.Button();
+            this.buttonDequeueFilaDinamica = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxInputPilhaEstatica
@@ -140,11 +146,59 @@
             this.buttonPopPilhaDinamica.UseVisualStyleBackColor = true;
             this.buttonPopPilhaDinamica.Click += new System.EventHandler(this.buttonPopPilhaDinamica_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.textBoxFilaDinamica);
+            this.groupBox3.Controls.Add(this.textBoxDataFilaDinamica);
+            this.groupBox3.Controls.Add(this.buttonEnqueueFilaDinamica);
+            this.groupBox3.Controls.Add(this.buttonDequeueFilaDinamica);
+            this.groupBox3.Location = new System.Drawing.Point(603, 12);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(194, 457);
+            this.groupBox3.TabIndex = 7;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Fila Dinamica";
+            // 
+            // textBoxFilaDinamica
+            // 
+            this.textBoxFilaDinamica.Location = new System.Drawing.Point(6, 22);
+            this.textBoxFilaDinamica.Name = "textBoxFilaDinamica";
+            this.textBoxFilaDinamica.Size = new System.Drawing.Size(181, 23);
+            this.textBoxFilaDinamica.TabIndex = 1;
+            // 
+            // textBoxDataFilaDinamica
+            // 
+            this.textBoxDataFilaDinamica.Enabled = false;
+            this.textBoxDataFilaDinamica.Location = new System.Drawing.Point(6, 80);
+            this.textBoxDataFilaDinamica.Multiline = true;
+            this.textBoxDataFilaDinamica.Name = "textBoxDataFilaDinamica";
+            this.textBoxDataFilaDinamica.Size = new System.Drawing.Size(181, 368);
+            this.textBoxDataFilaDinamica.TabIndex = 4;
+            // 
+            // buttonEnqueueFilaDinamica
+            // 
+            this.buttonEnqueueFilaDinamica.Location = new System.Drawing.Point(6, 51);
+            this.buttonEnqueueFilaDinamica.Name = "buttonEnqueueFilaDinamica";
+            this.buttonEnqueueFilaDinamica.Size = new System.Drawing.Size(75, 23);
+            this.buttonEnqueueFilaDinamica.TabIndex = 2;
+            this.buttonEnqueueFilaDinamica.Text = "Adiciona";
+            this.buttonEnqueueFilaDinamica.UseVisualStyleBackColor = true;
+            // 
+            // buttonDequeueFilaDinamica
+            // 
+            this.buttonDequeueFilaDinamica.Location = new System.Drawing.Point(112, 51);
+            this.buttonDequeueFilaDinamica.Name = "buttonDequeueFilaDinamica";
+            this.buttonDequeueFilaDinamica.Size = new System.Drawing.Size(75, 23);
+            this.buttonDequeueFilaDinamica.TabIndex = 3;
+            this.buttonDequeueFilaDinamica.Text = "Remove";
+            this.buttonDequeueFilaDinamica.UseVisualStyleBackColor = true;
+            // 
             // FormPilhasFilas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 479);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormPilhasFilas";
@@ -154,6 +208,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -169,5 +225,10 @@
         private System.Windows.Forms.TextBox textBoxDataPilhaDinamica;
         private System.Windows.Forms.Button buttonPushPilhaDinamica;
         private System.Windows.Forms.Button buttonPopPilhaDinamica;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox textBoxFilaDinamica;
+        private System.Windows.Forms.TextBox textBoxDataFilaDinamica;
+        private System.Windows.Forms.Button buttonEnqueueFilaDinamica;
+        private System.Windows.Forms.Button buttonDequeueFilaDinamica;
     }
 }
