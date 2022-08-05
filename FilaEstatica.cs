@@ -17,7 +17,7 @@ namespace PilhasFilas
 
         bool estaVazia()
         {
-            return _inicio == _fim;
+            return _inicio == -1;
         }
 
         bool estaCheia()
@@ -44,14 +44,18 @@ namespace PilhasFilas
 
         public void deQueue()
         {
-            if (_fim != -1)
+            if (!estaVazia())
             {
+                if (_fim == 0)
+                {
+                    _inicio = -1;
+                }
                 _dezenas[_dezenas.Length - 1] = 0;
                 for (int i = 0; i < (_dezenas.Length-1); i++)
                 {
                         _dezenas[i] = _dezenas[i+1];                   
                 }
-                _fim--;
+                _fim--;                
             }
             else
             {
